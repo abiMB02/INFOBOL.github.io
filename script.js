@@ -39,37 +39,3 @@ document.querySelectorAll('.nav-button').forEach(button => {
    button.addEventListener('click', stopAutoplay);
 });
 
-//script para la barra activa
-
-function initialize() {
-   console.log("El script común se está ejecutando.");
-   
-   // Ejemplo de funcionalidad: cambiar el texto de elementos si existen
-   const title = document.getElementById('title');
-   const paragraph = document.getElementById('paragraph');
-
-   if (title) {
-       title.innerText = "¡Texto cambiado por JavaScript en todas las páginas!";
-   }
-
-   if (paragraph) {
-       paragraph.innerText = "Este párrafo también ha sido cambiado en todas las páginas.";
-   }
-
-   // Nueva funcionalidad para el menú de navegación
-   const barraNav = document.querySelector(".barra-nav");
-   const navMenuLista = document.querySelector(".nav-menu-lista");
-
-   if (barraNav && navMenuLista) {
-       barraNav.addEventListener("click", () => {
-           navMenuLista.classList.toggle("menu_visible");
-       });
-   }
-}
-
-if (document.readyState === 'loading') {
-   document.addEventListener('DOMContentLoaded', initialize);
-} else {
-   initialize();
-}
-
